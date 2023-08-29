@@ -15,8 +15,11 @@ export default function Pergunta(props: PerguntaProps) {
             <div className="flex justify-between p-5 cursor-pointer bg-zinc-700"
                 onClick={() => setAberta(!aberta)}>
                 <span>{props.texto}</span>
+                {/* <IfElse teste={aberta}>
+                    <IconChevronUp />
+                    <IconChevronDown />
+                </IfElse> */}
                 {aberta ? <IconChevronUp /> : <IconChevronDown />}
-
             </div>
             <If teste={aberta}>
                 <div className="p-5">
