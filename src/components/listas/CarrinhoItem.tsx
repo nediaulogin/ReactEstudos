@@ -1,12 +1,8 @@
 import ItemCarrinho from "@/app/model/Produto/ItemCarrinho";
+import Moeda from "@/utils/Moeda";
 
 export default function CarrinhoItem(props: ItemCarrinho) {
-    function exibirPreco(valor: number) {
-        return valor.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        })
-    }
+
     return (
         <div className="flex items-center gap-2 p-2 bg-blue-500 rounded-full">
             <span>
@@ -16,7 +12,7 @@ export default function CarrinhoItem(props: ItemCarrinho) {
                 {props.quantidade}
             </span>
             <span>
-                {exibirPreco(props.produto.preco * props.quantidade)}
+                {Moeda.formatar(props.produto.preco * props.quantidade)}
             </span>
         </div>)
 }
