@@ -4,6 +4,7 @@ import Image from "next/image"
 
 interface ProdutoItemProps {
     produto: Produto
+    comprar: (produto: Produto) => void
 }
 
 export default function ProdutoItem(props: ProdutoItemProps) {
@@ -27,7 +28,8 @@ export default function ProdutoItem(props: ProdutoItemProps) {
                     <div className="text-gray-500">{produto.descricao}</div>
                 </div>
                 <div>
-                    <button className="flex justify-center w-full gap-1 botao">
+                    <button className="flex justify-center w-full gap-1 botao" onClick={() => props.comprar(produto)}>
+
                         <IconShoppingCart /> comprar
                     </button>
                 </div>
